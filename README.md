@@ -21,14 +21,15 @@
 CSIE is designed around clean architecture principles. It separates the execution layers into clean boundaries, ensuring maintainability, observability, and testability.
 
 ```mermaid
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Fira Code, monospace', 'primaryColor': '#F8FAFC', 'lineColor': '#64748B', 'nodeBorder': '#CBD5E1' }}}%%
 graph TD
     %% Define Styles
-    classDef client fill:#eef2f7,stroke:#3b5998,stroke-width:2px,stroke-dasharray: 5 5;
-    classDef controller fill:#d1e7dd,stroke:#0f5132,stroke-width:2px;
-    classDef service fill:#fff3cd,stroke:#664d03,stroke-width:2px;
-    classDef repo fill:#cff4fc,stroke:#087990,stroke-width:2px;
-    classDef db fill:#f8d7da,stroke:#842029,stroke-width:2px;
-    classDef external fill:#e2d9f3,stroke:#491217,stroke-width:2px;
+    classDef client fill:#F1F5F9,stroke:#475569,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef controller fill:#EFF6FF,stroke:#2563EB,stroke-width:2px;
+    classDef service fill:#F5F3FF,stroke:#4F46E5,stroke-width:2px;
+    classDef repo fill:#F8FAFC,stroke:#334155,stroke-width:2px;
+    classDef db fill:#ECFDF5,stroke:#059669,stroke-width:2px;
+    classDef external fill:#FAF5FF,stroke:#7C3AED,stroke-width:2px;
 
     %% Elements
     Client[API Client / Frontend Agent Gateway]:::client
@@ -53,9 +54,6 @@ graph TD
     Service -->|Rest Client Post| AIProvider
     AIProvider -->|Structured Prompting / JSON Output| GeminiAPI
     Repo -->|Hibernate ORM| DB
-
-    %% Notes
-    style CSIE fill:#fcfcfc,stroke:#333,stroke-width:1px
 ```
 
 ---
@@ -65,6 +63,7 @@ graph TD
 The relational schema is optimized to store audit-compliant transactional support data while keeping volatile LLM analysis snapshots linked as a strict 1-to-1 extension of support tickets. Flyway is used to orchestrate versioned DDL transitions across dev, staging, and production environments.
 
 ```mermaid
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Fira Code, monospace', 'primaryColor': '#F8FAFC', 'lineColor': '#64748B', 'nodeBorder': '#CBD5E1' }}}%%
 erDiagram
     CUSTOMERS {
         BIGINT id PK "AUTO_INCREMENT"
@@ -129,6 +128,7 @@ erDiagram
 When a customer ticket is analyzed, it undergoes strict formatting and parsing cycles to guarantee reliability over dynamic LLM outputs.
 
 ```mermaid
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Fira Code, monospace', 'primaryColor': '#F8FAFC', 'lineColor': '#64748B', 'nodeBorder': '#CBD5E1', 'actorBorder': '#475569', 'actorBkg': '#F1F5F9' }}}%%
 sequenceDiagram
     autonumber
     actor Operations as Support Agent / Webhook
