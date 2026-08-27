@@ -1,0 +1,2 @@
+ALTER TABLE support_tickets
+ADD COLUMN ai_processed BOOLEAN NOT NULL DEFAULT FALSE;

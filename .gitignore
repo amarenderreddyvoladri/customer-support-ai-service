@@ -1,0 +1,35 @@
+# Maven
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# IDEs (Eclipse, STS, IntelliJ, VS Code)
+.metadata/
+.recommenders/
+.sonarlint/
+.sts4-cache/
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# Local Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.local
+
+# Logs and OS files
+*.log
+RemoteSystemsTempFiles/
+Thumbs.db
+.DS_Store
